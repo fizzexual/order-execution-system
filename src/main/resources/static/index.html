@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Execution & Risk Management System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📊 Order Execution System</h1>
+            <p class="subtitle">Real-time Trading Platform</p>
+        </header>
+
+        <div class="dashboard">
+            <!-- Accounts Section -->
+            <section class="card">
+                <h2>💰 Accounts</h2>
+                <div id="accounts-list" class="data-list">
+                    <div class="loading">Loading accounts...</div>
+                </div>
+            </section>
+
+            <!-- Create Order Section -->
+            <section class="card">
+                <h2>📝 Create New Order</h2>
+                <form id="order-form">
+                    <div class="form-group">
+                        <label for="accountId">Account:</label>
+                        <select id="accountId" required>
+                            <option value="">Select Account</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="symbol">Symbol:</label>
+                        <input type="text" id="symbol" placeholder="e.g., AAPL" required maxlength="10">
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="type">Order Type:</label>
+                            <select id="type" required>
+                                <option value="MARKET">Market</option>
+                                <option value="LIMIT">Limit</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="side">Side:</label>
+                            <select id="side" required>
+                                <option value="BUY">Buy</option>
+                                <option value="SELL">Sell</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="quantity">Quantity:</label>
+                            <input type="number" id="quantity" min="1" max="1000000" required>
+                        </div>
+
+                        <div class="form-group" id="limit-price-group" style="display: none;">
+                            <label for="limitPrice">Limit Price:</label>
+                            <input type="number" id="limitPrice" step="0.01" min="0.01">
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Execute Order</button>
+                </form>
+                <div id="order-message" class="message"></div>
+            </section>
+
+            <!-- Orders Section -->
+            <section class="card full-width">
+                <h2>📋 Recent Orders</h2>
+                <div class="table-container">
+                    <table id="orders-table">
+                        <thead>
+                            <tr>
+                                <th>Order #</th>
+                                <th>Account</th>
+                                <th>Symbol</th>
+                                <th>Type</th>
+                                <th>Side</th>
+                                <th>Quantity</th>
+                                <th>Price</th>
+                                <th>Status</th>
+                                <th>Time</th>
+                            </tr>
+                        </thead>
+                        <tbody id="orders-body">
+                            <tr>
+                                <td colspan="9" class="loading">Loading orders...</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Execution Logs Section -->
+            <section class="card full-width">
+                <h2>📊 Execution Logs</h2>
+                <div class="table-container">
+                    <table id="logs-table">
+                        <thead>
+                            <tr>
+                                <th>Log ID</th>
+                                <th>Order ID</th>
+                                <th>Quantity</th>
+                                <th>Price</th>
+                                <th>Total Amount</th>
+                                <th>Status</th>
+                                <th>Message</th>
+                                <th>Executed At</th>
+                            </tr>
+                        </thead>
+                        <tbody id="logs-body">
+                            <tr>
+                                <td colspan="8" class="loading">Loading logs...</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </div>
+
+        <footer>
+            <p>Order Execution & Risk Management System | <a href="/h2-console" target="_blank">Database Console</a> | <a href="/actuator/health" target="_blank">Health Check</a></p>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
