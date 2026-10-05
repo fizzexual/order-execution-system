@@ -1,4 +1,4 @@
-# 📊 Order Execution & Risk Management System
+# 📊 Order Execution & Risk Management System 🍂
 
 A production-quality order execution platform built with Java Spring Boot, demonstrating real-world trading system architecture with comprehensive risk management, transaction handling, and audit trails.
 
