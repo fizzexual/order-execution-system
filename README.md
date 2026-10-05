@@ -7,6 +7,10 @@ A production-quality order execution platform built with Java Spring Boot, demon
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Build](https://img.shields.io/badge/Build-Passing-success.svg)]()
 
+## About
+
+A portfolio backend that simulates the order execution side of a stock trading platform: accounts, market and limit orders, pre-trade risk checks and an audit trail, exposed through a REST API and a small web dashboard. It is meant for showing Java Spring Boot backend skills, not for real trading.
+
 ## 🎯 Overview
 
 This system simulates a stock trading platform's order execution engine, handling order creation, validation, execution, and comprehensive audit logging. Built with enterprise-grade architecture and best practices, it showcases modern Java backend development skills.
